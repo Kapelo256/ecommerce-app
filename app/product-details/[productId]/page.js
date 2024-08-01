@@ -17,7 +17,6 @@ function ProductDetails({ params }) {
 
   const getProductById_ = () => {
     ProductApis.getProductById(params?.productId).then((res) => {
-      console.log("product item :", res.data.data);
       setProductDetails(res.data.data);
       getProductListByCategory(res.data.data)
     });
@@ -25,7 +24,6 @@ function ProductDetails({ params }) {
   const getProductListByCategory = (product) => {
     ProductApis.getProductsByCategory(product?.attributes.category).then(
       (res) => {
-        console.log(res?.data?.data);
         setProductList(res?.data?.data);
       }
     );

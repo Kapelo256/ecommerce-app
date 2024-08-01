@@ -10,7 +10,6 @@ function ProductSection() {
   }, []);
   const getLatestProducts_ = () => {
     ProductApis.getLatestProducts().then(res => {
-      console.log(res.data);
       setProductList(res.data.data);
     })
 }
